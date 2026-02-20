@@ -235,8 +235,3 @@ Projeto desenvolvido para prática de desenvolvimento web, explorando:
 Desenvolvido por **Ana** e **Felipe**  
 Projeto educacional para estudos de HTML, CSS, JavaScript e PHP.
 
----
-
-## Licença
-
-Este projeto é de uso educacional e livre para estudos.
