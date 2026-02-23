@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineMax</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <div class="header__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M17 3v18M3 7h4M17 7h4M3 12h18M3 17h4M17 17h4"/></svg>
+        <span>CineMax</span>
+      </div>
+      <nav class="header__nav">
+        <a href="#filmes">Filmes</a>
+        <a href="#combos">Combos</a>
+        <a href="#cinemas">Cinemas</a>
+        <button class="btn-location" id="btnLocation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="locationText">Shopping Center Norte</span>
+        </button>
+        <button class="btn-icon" id="btnCart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="btn-icon btn-login" id="btnLogin">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span id="loginText">Entrar</span>
+        </button>
+      </nav>
+      <button class="header__hamburger" id="btnMenu">
+        <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <nav class="header__mobile-nav" id="mobileNav" style="display:none;">
+      <button class="btn-location" id="btnLocationMobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span id="locationTextMobile">Shopping Center Norte</span>
+      </button>
+      <button class="btn-icon" id="btnLoginMobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        <span id="loginTextMobile">Entrar</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=1080&q=80" alt="Cinema" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container hero__content">
+      <span class="badge badge--yellow">EM CARTAZ AGORA</span>
+      <h1 class="hero__title">Bem-vindo ao CineMax</h1>
+      <div class="hero__meta">
+        <span class="hero__rating">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#EAB308" stroke="#EAB308" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Os melhores filmes
+        </span>
+        <span class="hero__duration">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Em cartaz agora
+        </span>
+        <span class="badge badge--red">Sao Paulo</span>
+      </div>
+      <p class="hero__desc">Confira os filmes em cartaz no Brasil agora mesmo e garanta seu ingresso com facilidade. A melhor experiência de cinema espera por você!</p>
+      <div class="hero__actions">
+        <button class="btn btn--yellow" onclick="document.getElementById('filmes').scrollIntoView({behavior:'smooth'})">Ver Filmes em Cartaz</button>
+        <button class="btn btn--outline" onclick="document.getElementById('combos').scrollIntoView({behavior:'smooth'})">Ver Combos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILMES -->
+  <section class="section bg-light" id="filmes">
+    <div class="container">
+      <div class="section__header">
+        <h2>Filmes em Cartaz</h2>
+        <p>Dados em tempo real via API TMDB &bull; Escolha seu filme e garanta seus ingressos</p>
+      </div>
+
+      <!-- Filtros de gênero (preenchidos dinamicamente pelo JS) -->
+      <div class="filters" id="genreFilters">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        <span style="color:#6B7280">Genero:</span>
+        <!-- Os botões de filtro são inseridos pelo script.js após a API responder -->
+      </div>
+
+      <!-- Grid de filmes — preenchido dinamicamente pelo JS -->
+      <div class="grid grid--3" id="moviesGrid">
+        <!-- Loading inicial enquanto a API não responde -->
+        <div style="grid-column:1/-1;text-align:center;padding:3rem 0;">
+          <div class="loading-spinner"></div>
+          <p style="color:#6B7280;margin-top:1rem;font-size:1rem;">Buscando filmes em cartaz...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMBOS -->
+  <section class="section bg-white" id="combos">
+    <div class="container">
+      <div class="section__header">
+        <h2>Combos de Cinema</h2>
+        <p>Complete sua experiencia com nossos deliciosos combos</p>
+      </div>
+      <div class="grid grid--3" id="combosGrid"></div>
+      <div class="promo-banner">
+        <h3>Compre Ingresso + Combo e Economize!</h3>
+        <p>Ao comprar qualquer combo junto com seu ingresso, ganhe 15% de desconto</p>
+        <button class="btn btn--dark">Ver Promocoes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CINEMAS -->
+  <section class="section bg-light" id="cinemas">
+    <div class="container">
+      <div class="section__header">
+        <h2>Nossos Cinemas</h2>
+        <p>Encontre o CineMax mais proximo de voce em Sao Paulo</p>
+      </div>
+      <div class="grid grid--2" id="locationsGrid"></div>
+      <div class="features-dark">
+        <div class="feature">
+          <span class="feature__icon">🎬</span>
+          <h4>Tecnologia 4DX</h4>
+          <p>Sinta o filme com efeitos de movimento, agua, vento e aromas</p>
+        </div>
+        <div class="feature">
+          <span class="feature__icon">🍿</span>
+          <h4>Bomboniere Completa</h4>
+          <p>Pipoca fresquinha, snacks e bebidas variadas</p>
+        </div>
+        <div class="feature">
+          <span class="feature__icon">♿</span>
+          <h4>Acessibilidade</h4>
+          <p>Todas as unidades com acesso para cadeirantes e elevadores</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="header__logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M17 3v18M3 7h4M17 7h4M3 12h18M3 17h4M17 17h4"/></svg>
+            <span>CineMax</span>
+          </div>
+          <p>A melhor experiencia de cinema com tecnologia de ponta e conforto excepcional.</p>
+          <div class="footer__social">
+            <a href="#" class="social-btn">F</a>
+            <a href="#" class="social-btn">IN</a>
+            <a href="#" class="social-btn">TW</a>
+            <a href="#" class="social-btn">YT</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Filmes</h4>
+          <ul>
+            <li><a href="#">Em Cartaz</a></li>
+            <li><a href="#">Em Breve</a></li>
+            <li><a href="#">Pre-Estreias</a></li>
+            <li><a href="#">IMAX</a></li>
+            <li><a href="#">4DX</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Servicos</h4>
+          <ul>
+            <li><a href="#">Comprar Ingressos</a></li>
+            <li><a href="#">Combos</a></li>
+            <li><a href="#">Programa Fidelidade</a></li>
+            <li><a href="#">Gift Card</a></li>
+            <li><a href="#">Cinema Privado</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#">Sobre o CineMax</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Imprensa</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>2025 CineMax. Todos os direitos reservados.</p>
+        <div class="footer__links">
+          <a href="#">Termos de Uso</a>
+          <a href="#">Politica de Privacidade</a>
+          <a href="#">Acessibilidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL LOGIN -->
+  <div class="modal-overlay" id="modalLogin" style="display:none;">
+    <div class="modal">
+      <button class="modal__close" onclick="closeModal('modalLogin')">X</button>
+      <h2>Bem-vindo ao CineMax</h2>
+      <p class="modal__subtitle">Faca login para comprar ingressos e aproveitar vantagens exclusivas</p>
+      <form id="loginForm" class="form">
+        <div class="form__group">
+          <label for="loginName">Nome Completo</label>
+          <input type="text" id="loginName" placeholder="Seu nome" />
+        </div>
+        <div class="form__group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="seu@email.com" />
+        </div>
+        <button type="submit" class="btn btn--yellow btn--full">Entrar</button>
+      </form>
+      <p class="modal__footer-text">Ao entrar, voce concorda com nossos Termos de Uso</p>
+    </div>
+  </div>
+
+  <!-- MODAL LOCALIZACAO -->
+  <div class="modal-overlay" id="modalLocation" style="display:none;">
+    <div class="modal modal--wide">
+      <div class="modal__header">
+        <h2>Escolha seu cinema</h2>
+        <button class="modal__close" onclick="closeModal('modalLocation')">X</button>
+      </div>
+      <div class="modal__body" id="locationsList"></div>
+    </div>
+  </div>
+
+  <!-- MODAL ASSENTOS -->
+  <div class="modal-overlay" id="modalSeats" style="display:none;">
+    <div class="modal modal--xl">
+      <div class="modal__header">
+        <div>
+          <h2 id="seatMovieTitle">Filme</h2>
+          <p id="seatSessionInfo" class="modal__subtitle">Sessao</p>
+        </div>
+        <button class="modal__close" onclick="closeModal('modalSeats')">X</button>
+      </div>
+      <div class="modal__body">
+        <div class="screen-bar"></div>
+        <p class="screen-label">TELA</p>
+        <div id="seatsGrid" class="seats-grid"></div>
+        <div class="seats-legend">
+          <span><span class="legend-box legend--available"></span> Disponivel</span>
+          <span><span class="legend-box legend--selected"></span> Selecionado</span>
+          <span><span class="legend-box legend--occupied"></span> Ocupado</span>
+        </div>
+        <div class="seats-info" id="seatsInfo" style="display:none;">
+          <p><strong>Assentos selecionados:</strong> <span id="selectedSeatsList"></span></p>
+          <p><strong>Total:</strong> <span id="selectedSeatsTotal"></span></p>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--outline-gray" onclick="closeModal('modalSeats')">Cancelar</button>
+        <button class="btn btn--yellow" id="btnConfirmSeats" disabled>Adicionar ao Carrinho (0)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CARRINHO -->
+  <div class="modal-overlay" id="modalCart" style="display:none;">
+    <div class="modal modal--wide">
+      <div class="modal__header">
+        <h2>Carrinho</h2>
+        <button class="modal__close" onclick="closeModal('modalCart')">X</button>
+      </div>
+      <div class="modal__body" id="cartBody"></div>
+      <div class="modal__footer" id="cartFooter" style="display:none;">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cartTotal">R$ 0,00</span>
+        </div>
+        <button class="btn btn--yellow btn--full" onclick="openCheckout()">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CHECKOUT -->
+  <div class="modal-overlay" id="modalCheckout" style="display:none;">
+    <div class="modal">
+      <div class="modal__header">
+        <h2>Pagamento</h2>
+        <button class="modal__close" id="btnCloseCheckout">X</button>
+      </div>
+      <div class="modal__body">
+        <div class="checkout-total-box">
+          <p>Total a pagar</p>
+          <strong id="checkoutTotal">R$ 0,00</strong>
+        </div>
+        <form id="checkoutForm" class="form">
+          <div class="form__group">
+            <label for="cardNumber">Numero do Cartao</label>
+            <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="16" required />
+          </div>
+          <div class="form__group">
+            <label for="cardName">Nome no Cartao</label>
+            <input type="text" id="cardName" placeholder="Como esta no cartao" required />
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="cardExpiry">Validade</label>
+              <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5" required />
+            </div>
+            <div class="form__group">
+              <label for="cardCvv">CVV</label>
+              <input type="text" id="cardCvv" placeholder="123" maxlength="3" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn--yellow btn--full" id="btnPagar">
+            Confirmar Pagamento
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SUCESSO -->
+  <div class="modal-overlay" id="modalSuccess" style="display:none;">
+    <div class="modal" style="text-align:center;">
+      <div style="font-size:4rem;margin-bottom:1rem;">🎉</div>
+      <h2>Compra Confirmada!</h2>
+      <p class="modal__subtitle">Seus ingressos foram reservados com sucesso.</p>
+      <div style="background:#F0FDF4;border:2px solid #22C55E;border-radius:8px;padding:1rem;margin:1.5rem 0;">
+        <p style="color:#15803D;font-size:.85rem;margin-bottom:.25rem;">Codigo da Reserva</p>
+        <strong id="reservationCode" style="font-size:1.4rem;color:#166534;letter-spacing:2px;">---</strong>
+      </div>
+      <p style="color:#6B7280;font-size:.9rem;">Este modal fechara automaticamente em 5 segundos.</p>
+      <button class="btn btn--yellow" style="margin-top:1rem" onclick="closeModal('modalSuccess')">Fechar</button>
+    </div>
+  </div>
+
+  <!-- CSS do loading spinner -->
+  <style>
+    .loading-spinner {
+      width: 48px; height: 48px;
+      border: 4px solid #F3F4F6;
+      border-top-color: #EAB308;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+
+  <script src="script.js"></script>
+</body>
+</html>
